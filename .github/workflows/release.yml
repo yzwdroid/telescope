@@ -1,0 +1,30 @@
+on:
+  push:
+    tags:
+      - 'v*'
+
+name: Create Release
+
+jobs:
+  build:
+    name: Create Release
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Initialize git config
+        run: |
+          git config user.name "Github Actions"
+          git config user.email "telescope@local.com"
+
+      - name: add upstream
+        run: git remote add upstream https://github.com/Seneca-CDOT/telescope.git
+
+      - name: install
+        run: npm install
+
+      - name: Create Release
+        run: npm run release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
