@@ -22,7 +22,7 @@ jobs:
         run: git remote add upstream https://github.com/Seneca-CDOT/telescope.git
 
       - name: export env
-        run: export GITHUB_TOKEN=secrets.GITHUB_TOKEN
+        run: export GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }}
       - name: install
         run: npm install
 
