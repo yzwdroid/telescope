@@ -1,10 +1,10 @@
 {
   "git": {
-    "pushRepo": "upstream"
+    "pushRepo": "origin"
   },
   "github": {
     "release": true,
-    "pushRepo": "upstream"
+    "pushRepo": "origin"
   },
   "npm": {
     "publish": false
